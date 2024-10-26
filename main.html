@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <title>useless website</title>
+    <link rel="icon" type="image/x-icon" href="important shit that the website would not function without/favicon.ico">
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+  
+    <div class ="main">
+        <h1>Monkey Typewriter</h1>
+        <p id="output">output</p>
+        <p>js/html port of the original python prototype</p>
+        <input id="textinput" placeholder="text input"/>
+        <script src="main.js"></script>
+        <input id="runTypewriter" type="button" value="run" onclick="MonkeyTypewriter(document.getElementById('textinput').value, document.getElementById('delay').value, document.getElementById('kps').value, document.getElementById('models').value) ;" /> <!-- this function call is fucking abhorrent lol -->
+        <p id="inputwarning"></p>
+        
+        <br>
+        <br><img src="important shit that the website would not function without/workin.gif" alt="a chimp (not a monkey) going hammer and tongs at a typewriter"></img>
+        
+        <p>achieved full sentence in</p> 
+        <h2 id="attempts">0 keystrokes</h2>
+        <p id ="time">assuming a rate of 0 keystrokes per second it would take 1 monkey</p> 
+        <h2 id="timetoacheive">0 seconds</h2>
+        <p>to acheive this result</p>
+        <br>
+        <p>the chances of getting this result in one shot are</p>
+        <h2 id ="probability">1 in 1</h2>
+        <br>
+        <br> 
+    </div>
+    
+    <div class="sidebar"> <!-- this should really be a popout tab -->
+        <h2>options</h2>
+        <h4>model</h4>
+        <select name="models" id="models">
+          <option value="regular monkey typewriter">regular monkey typewriter</option>
+          <option value="dumb monkey typewriter">dumb monkey typewriter</option>
+          <option value="highbrow monkey typewriter">highbrow monkey typewriter</option>
+        </select>
+        <h4>delay</h4>
+        <input id="delay" placeholder="delay (milliseconds)"/>
+        <p id="delaywarning"></p>
+        <h4>keystrokes per second</h4>
+        <input id="kps" placeholder="keystrokes per second"/>
+        <p id="kpswarning"></p>
+    </div>
+    
+    <div class="footer">
+        <p>made with <del>love</del>  banana</p>
+    </div>
+    
+    
+    
+  </body>
+</html>
