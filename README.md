@@ -20,3 +20,6 @@
   <li>website touchups?</li>
   <li>calculation for banana wages(apparently unpaid labour is bad, who knew)</li>
 </ul>
+
+<p>running out of things to put here so</p>
+<img src="important shit that the website would not function without/boogie.gif" height="256"></img>
