@@ -30,7 +30,7 @@ select{
   }
 }
 
-.footer #sourcecode {
+#sourcecode {
   text-align: center;
   position: fixed;
   right: 0;
