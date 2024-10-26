@@ -6,7 +6,7 @@ function setDefaultValues(){
         kps_input.value = 5;
     }
     if (delay_input.value == ''){
-        delay_input.value = 25;
+        delay_input.value = 0;
     }
 }
 
