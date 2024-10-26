@@ -1,4 +1,5 @@
 <h1>monkey-typewriter</h1>
+<p>website is here https://hystamine.github.io/monkey-typewriter/</p>
 <p>js implementation of the age old monkey on a typewriter hypothetical</p>
 <p>currently there are 3 models</p>
 <ul>
