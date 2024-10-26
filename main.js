@@ -1,6 +1,18 @@
-function check_errors() {
-    let text_input = document.getElementById('textinput')
-    let input_warning = document.getElementById('inputwarning')
+function setDefaultValues(){
+    let delay_input = document.getElementById('delay');
+    let kps_input = document.getElementById('kps');
+    
+    if (kps_input.value == ''){
+        kps_input.value = 5;
+    }
+    if (delay_input.value == ''){
+        delay_input.value = 25;
+    }
+}
+
+function checkErrors() {
+    let text_input = document.getElementById('textinput');
+    let input_warning = document.getElementById('inputwarning');
     let delay_input = document.getElementById('delay');
     let delay_warning = document.getElementById('delaywarning');
     let kps_input = document.getElementById('kps');
@@ -43,14 +55,14 @@ function check_errors() {
     return output;
 }
 
-function RandInt(min, max) {
+function randInt(min, max) {
     // self explanatory
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function seconds_to_DHMS(seconds) {
+function secondsToDHMS(seconds) {
     // probably a more efficient way of doing this
     var days = Math.floor(seconds / (3600 * 24));
     var hours = Math.floor((seconds % (3600 * 24)) / 3600);
@@ -93,7 +105,7 @@ function numberWithCommas(x) {
     // borrowed without permission from StackOverflow.com
 }
 
-async function MonkeyTypewriter(input_str, delay, keystrokes, model){
+async function monkeyTypewriter(input_str, delay, keystrokes, model){
     
     let output_str = new Array(input_str.length).fill('');
     let output_element = document.getElementById('output');
@@ -103,7 +115,7 @@ async function MonkeyTypewriter(input_str, delay, keystrokes, model){
     let probability = document.getElementById('probability');
     let attempts = 1;
     
-    if (check_errors()){
+    if (checkErrors()){
         return;
     }
     
@@ -114,8 +126,8 @@ async function MonkeyTypewriter(input_str, delay, keystrokes, model){
             while(output_str[i] != input_str[i]){ // while character is incorrect
                 attempts++
                 attempts_element.textContent = numberWithCommas(attempts) + ' keystrokes';
-                time_element.textContent = seconds_to_DHMS(attempts/keystrokes);
-                let new_char = String.fromCharCode(RandInt(32, 127)); // random ascii character
+                time_element.textContent = secondsToDHMS(attempts/keystrokes);
+                let new_char = String.fromCharCode(randInt(32, 127)); // random ascii character
                 output_str[i] = new_char;
                 output_element.textContent = output_str.join('');
 
@@ -126,11 +138,11 @@ async function MonkeyTypewriter(input_str, delay, keystrokes, model){
     } else if (model === "dumb monkey typewriter"){
         let i = 1;
         while (output_str.join('') != input_str) { // while character is incorrect
-            let new_char = String.fromCharCode(RandInt(32, 127));
+            let new_char = String.fromCharCode(randInt(32, 127));
             output_str[i] = new_char;
             attempts++
             attempts_element.textContent = numberWithCommas(attempts) + ' keystrokes';
-            time_element.textContent = seconds_to_DHMS(attempts/keystrokes);
+            time_element.textContent = secondsToDHMS(attempts/keystrokes);
             output_element.textContent = output_str.join('');
             if (output_str[i] != input_str[i]){
                 i = 0;
@@ -145,14 +157,14 @@ async function MonkeyTypewriter(input_str, delay, keystrokes, model){
         while (output_str.join('') != input_str) {
             attempts++;
             attempts_element.textContent = numberWithCommas(attempts) + ' keystrokes';
-            time_element.textContent = seconds_to_DHMS(attempts / keystrokes);
+            time_element.textContent = secondsToDHMS(attempts / keystrokes);
             await new Promise(resolve => setTimeout(resolve, delay));
-            let new_char = String.fromCharCode(RandInt(32, 127));
+            let new_char = String.fromCharCode(randInt(32, 127));
             for (let i = 0; i < input_str.length; i++) { // iterate through every character in input_str
                 output_element.textContent = output_str.join('') + new_char; // update display
                 if (new_char == input_str[i] && output_str[i] != new_char) { // if new character is correct and output[i] isn't already correct
                     output_str[i] = new_char; // update
-                    new_char = String.fromCharCode(RandInt(32, 127)); // new character
+                    new_char = String.fromCharCode(randInt(32, 127)); // new character
                 }
             }
         }

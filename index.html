@@ -6,7 +6,7 @@
     <link rel="icon" type="image/x-icon" href="important shit that the website would not function without/favicon.ico">
     <link rel="stylesheet" href="main.css">
   </head>
-  <body>
+  <body onload='setDefaultValues()'>
   
     <div class ="main">
         <h1>Monkey Typewriter</h1>
@@ -14,12 +14,10 @@
         <p>js/html port of the original python prototype</p>
         <input id="textinput" placeholder="text input"/>
         <script src="main.js"></script>
-        <input id="runTypewriter" type="button" value="run" onclick="MonkeyTypewriter(document.getElementById('textinput').value, document.getElementById('delay').value, document.getElementById('kps').value, document.getElementById('models').value) ;" /> <!-- this function call is fucking abhorrent lol -->
+        <input id="runTypewriter" type="button" value="run" onclick="monkeyTypewriter(document.getElementById('textinput').value, document.getElementById('delay').value, document.getElementById('kps').value, document.getElementById('models').value) ;" /> <!-- this function call is fucking abhorrent lol -->
         <p id="inputwarning"></p>
-        
         <br>
         <br><img src="important shit that the website would not function without/workin.gif" alt="a chimp (not a monkey) going hammer and tongs at a typewriter"></img>
-        
         <p>achieved full sentence in</p> 
         <h2 id="attempts">0 keystrokes</h2>
         <p id ="time">assuming a rate of 0 keystrokes per second it would take 1 monkey</p> 
@@ -51,8 +49,6 @@
     <div class="footer">
         <p>made with <del>love</del>  banana</p>
     </div>
-    
-    
     
   </body>
 </html>
