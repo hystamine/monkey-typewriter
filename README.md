@@ -5,7 +5,7 @@
 <ul>
   <li><b>dumb typewriter</b></li>
   <p>generates a random character, iterates through input_str, if that character == input_str[i] it sets output_str[i] to random_char, if random_char != input_str[i] it starts from scratch</p>
-  <p>using this model is generally a bad idea, refer to the calculation in the bottom of the page for why</p>
+  <p>using this model is generally a bad idea, refer to the calculation at the bottom of the page as to why</p>
   <li><b>regular typewriter</b></li>
   <p>same as dumb typewriter but it regenerates new_char until it gets it right, no starting from scratch</p>
   <li><b>highbrow typewriter</b></li>
@@ -13,6 +13,7 @@
   fun to watch on large sentences with 0 delay
 </ul>
 <p>technically inaccurate considering a completely random character is picked rather than one of the keys closest to the last character picked</p>
+<p>you <i>can</i> remove the async and await parts of monkeyTypewriter() for Speed, this might freeze your browser depending on the length of input_str so be weary of that</p>
 <p>licensed under the GNU General Public License v2.0 so feel free to fix, break, fork, modify, maim, destroy as you see fit</p>
 
 <h2>TODO</h2>
