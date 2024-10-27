@@ -1,6 +1,6 @@
 <h1>monkey-typewriter</h1>
-<p>website is here https://hystamine.github.io/monkey-typewriter/</p>
 <p>js implementation of the age old monkey on a typewriter hypothetical</p>
+<p>website is here https://hystamine.github.io/monkey-typewriter/</p>
 <p>currently there are 3 models</p>
 <ul>
   <li><b>dumb typewriter</b></li>
@@ -9,8 +9,10 @@
   <li><b>regular typewriter</b></li>
   <p>same as dumb typewriter but it regenerates new_char until it gets it right, no starting from scratch</p>
   <li><b>highbrow typewriter</b></li>
-  <p>picks a random character and interates through all characters of input_str, if it finds a match to input_str[i] it sets output_str[i] to random_char and then picks a new character, if no match is found it picks a new random character</p>
+  <p>picks a random character and iterates through all characters of input_str, if it finds a match to input_str[i] it sets output_str[i] to random_char and then picks a new character, if no match is found it picks a new random character</p>
+  fun to watch on large sentences with 0 delay
 </ul>
+<p>technically inaccurate considering a completely random character is picked rather than one of the keys closest to the last character picked</p>
 <p>licensed under the GNU General Public License v2.0 so feel free to fix, break, fork, modify, maim, destroy as you see fit</p>
 
 <h2>TODO</h2>
@@ -19,7 +21,7 @@
   <li>funny confetti on finish</li>
   <li>illusive 4th model</li>
   <li>website touchups?</li>
-  <li>calculation for banana wages(apparently unpaid labour is bad, who knew)</li>
+  <li>calculation for banana wages(apparently unpaid labor is bad, who knew)</li>
 </ul>
 
 <p>running out of things to put here so</p>
